@@ -1,0 +1,3 @@
+'use client';
+import {FormEvent,useState} from 'react';
+export default function ContactForm(){const [sent,setSent]=useState(false);function submit(e:FormEvent){e.preventDefault();setSent(true)}return <form className="form" onSubmit={submit}><input required placeholder="Full name"/><input required type="email" placeholder="Business email"/><input placeholder="Company"/><textarea required rows={6} placeholder="Tell us what you need"></textarea><button className="btn light" type="submit">{sent?'Enquiry captured ✓':'Submit enquiry →'}</button><small>{sent?'Connect this action to your CRM/email endpoint before production.':''}</small></form>}
